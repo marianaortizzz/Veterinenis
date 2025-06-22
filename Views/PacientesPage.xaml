@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Veterinenis.Views.PacientesPage"
+             Title="PacientesPage"
+             BackgroundColor="#E4DFDA"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, *"
+          ColumnDefinitions="*"
+          RowSpacing="0">
+
+        <Image Grid.Row="0"
+               Source="logovetnegro.png"
+               WidthRequest="150"
+               HeightRequest="50"
+               Margin="0,30,0,10"
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+
+        <Label Grid.Row="1"
+               Text="PACIENTES"
+               HorizontalOptions="Center"
+               FontSize="25"
+               TextColor="#000000"
+               Padding="0,0,0,20" />
+
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*, Auto"   ColumnSpacing="10"            Padding="20,0,20,0">
+            <Border Grid.Column="0"
+                    Stroke="#FF8C00"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 25"
+                    Padding="7"
+                    BackgroundColor="#E4DFDA"
+                    VerticalOptions="Center" >
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
+                    <Entry Grid.Column="0"
+                           Placeholder="Busca a un paciente"
+                           IsPassword="False"
+                           VerticalOptions="Center"
+                           PlaceholderColor="#A0A0A0"
+                           TextColor="Black"
+                           Text="{Binding NombreBusqueda}"
+                           ClearButtonVisibility="WhileEditing"
+                           BackgroundColor="Transparent"
+                           Margin="0"/>
+                    <Image Grid.Column="1"
+                           Source="search.png"
+                           WidthRequest="24"
+                           HeightRequest="24"
+                           Margin="0,0,10,0"
+                           VerticalOptions="Center" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="1"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    BackgroundColor="#FF8C00"
+                    StrokeShape="Ellipse"
+                    VerticalOptions="Center">
+                <ImageButton Source="plus_icon.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFit"
+                             Padding="10"
+                             Command="{Binding AddPatientCommand}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center" />
+            </Border>
+        </Grid>
+
+        <ScrollView Grid.Row="3"
+                    Padding="20,10,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+            <VerticalStackLayout Spacing="10">
+                <Border
+                Background="#FFFFFF"
+                Stroke="#CCCCCC"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 15"
+                Padding="15"
+                HorizontalOptions="Center"
+                MaximumWidthRequest="400">
+                    <Grid
+                    ColumnDefinitions="Auto, *, Auto"
+                    ColumnSpacing="15"
+                    VerticalOptions="Center">
+                        <Image Grid.Column="0"
+                           Source="logovetnegro.png"
+                           WidthRequest="100"
+                           HeightRequest="100"
+                           Aspect="AspectFill"      
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"  
+                           Margin="0,0,0,0">
+                            <Image.Clip>
+                                <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50" />
+                            </Image.Clip>
+                        </Image>
+
+                        <VerticalStackLayout Grid.Column="1"
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="StartAndExpand"
+                                         Spacing="2">
+                            <Label Text="Chocolatito"
+                               TextColor="Black"
+                               FontSize="18"
+                               FontAttributes="Bold" />
+                            <Label Text="Perro"
+                               TextColor="Gray"
+                               FontSize="14" />
+                            <Label Text="5 años"
+                               TextColor="Gray"
+                               FontSize="14" />
+                            <Label Text="Schnauzer"
+                               TextColor="Gray"
+                               FontSize="14" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="2"
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="End"
+                                         Spacing="8">
+                            <Border WidthRequest="35" HeightRequest="35" StrokeShape="Ellipse" BackgroundColor="#689F38" HorizontalOptions="Center">
+                                <ImageButton Source="edit_icon.png"
+                                         BackgroundColor="Transparent"
+                                         Aspect="AspectFit"
+                                         Padding="8"
+                                         Command="{Binding EditCommand}" />
+                            </Border>
+
+                            <Border WidthRequest="35" HeightRequest="35" StrokeShape="Ellipse" BackgroundColor="#FF9800" HorizontalOptions="Center">
+                                <ImageButton Source="delete_icon.png"
+                                         BackgroundColor="Transparent"
+                                         Aspect="AspectFit"
+                                         Padding="8"
+                                         Command="{Binding DeleteCommand}" />
+                            </Border>
+
+                            <Border WidthRequest="35" HeightRequest="35" StrokeShape="Ellipse" BackgroundColor="#E64A19" HorizontalOptions="Center">
+                                <ImageButton Source="view_icon.png"
+                                         BackgroundColor="Transparent"
+                                         Aspect="AspectFit"
+                                         Padding="8"
+                                         Command="{Binding ViewDetailsCommand}" />
+                            </Border>
+
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>

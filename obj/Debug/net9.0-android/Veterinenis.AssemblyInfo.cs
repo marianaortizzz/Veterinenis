@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Veterinenis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+2a7965e821dcfaf8354fb7137d4b2a33ab6dbcb7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Veterinenis")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Veterinenis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

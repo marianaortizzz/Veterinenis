@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Veterinenis.Views.LoginPage"
+             Title="LoginPage">
+    <Grid>
+        <Image Source="fondologin.png"
+           Aspect="AspectFill"
+           ZIndex="0" />
+
+        <StackLayout VerticalOptions="Start" HorizontalOptions="Center">
+            <Image Source="logovetnegro.png"
+                   WidthRequest="250"
+                   HeightRequest="150"
+                   Margin="0,30,0,30"
+                   />
+            <Label Text="Usuario"
+               FontSize="20"
+               TextColor="#000000"
+               FontAttributes="Bold"
+               Margin="0,20,0,5"/>
+
+            <Entry Placeholder="Ingresa tu usuario"
+                    VerticalOptions="Center"
+                    PlaceholderColor="#A0A0A0"
+                    TextColor="Black"
+                    Text="{Binding Contraseña}"
+                    ClearButtonVisibility="WhileEditing">   
+            </Entry>
+
+
+            <Label Grid.Row="2"
+               Text="Contraseña"
+               TextColor="#000000"
+               FontSize="20"
+               FontAttributes="Bold"
+               Margin="0,30,0,5" />
+
+            <Grid ColumnDefinitions="*, Auto">
+                <Entry Grid.Column="0"
+                       Placeholder="Ingresa tu contraseña"
+                       IsPassword="True"
+                       VerticalOptions="Center"
+                       PlaceholderColor="#A0A0A0"
+                       TextColor="Black"
+                       Text="{Binding Contraseña}"
+                       ClearButtonVisibility="WhileEditing" />
+                <Image Grid.Column="1"
+                       Source="hide.png"  WidthRequest="24"
+                       HeightRequest="24"
+                       Margin="0,0,10,0"
+                       VerticalOptions="Center">
+                    <!--
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TogglePasswordVisibility" />
+                        </Image.GestureRecognizers>-->
+                </Image>
+            </Grid>
+
+            <Button Grid.Row="4"
+                Text="Ingresar"
+                BackgroundColor="#FF8C00" TextColor="White"
+                FontSize="20"
+                CornerRadius="25" HeightRequest="50"
+                Margin="0,40,0,20"
+                Command="{Binding LoginCommand}" />
+            <Label Grid.Row="5"
+               Text="Olvide mi contraseña"
+               TextColor="#707070" FontSize="16"
+               HorizontalOptions="Center"
+               Margin="0,0,0,10">
+                <!--
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                </Label.GestureRecognizers>-->
+            </Label>
+
+            <Label Grid.Row="6"
+               Text="Registrate"
+               TextColor="#707070" FontSize="16"
+               HorizontalOptions="Center">
+                <!--
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                </Label.GestureRecognizers>-->
+            </Label>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>
